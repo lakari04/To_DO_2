@@ -1,20 +1,24 @@
-function createStar(){
-    const star = document.createElement("div");
-    star.className = "star";
-    const size = Math.random() * 3;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    star.style.left = `${Math.random() * 100}%`;
-    star.style.top = `${Math.random() * 100}%`;
-    document.getElementById("universe").appendChild(star);
+import * as THREE from 'three.js-master/build/three.module.js';
+
+
+let scene, camera, renderer;
+        
+
+function init(){
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight, 1 ,1000);
+    camera.position.z = 1;
+    camera.rotation.x = Math.PI/2;
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElemnt);
+
+    animate();
 }
 
-function animateStars() {
-    const starCount = 100;
-    for(let i = 0; i < starCount; i++){
-        createStar();
-    }
+function animate() {
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
 }
-
-console.log("Function is functioning");
-animateStars();
+init();
