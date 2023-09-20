@@ -1,4 +1,4 @@
-import * as THREE from 'three.js-master/build/three.module.js';
+import * as THREE from './three.js-master/build/three.js';
 
 
 let scene, camera, renderer;
@@ -12,10 +12,11 @@ function init(){
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElemnt);
+    document.body.appendChild(renderer.domElement);
 
     animate();
 }
+console.log(THREE);
 
 function animate() {
     renderer.render(scene, camera);
