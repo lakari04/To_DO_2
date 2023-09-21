@@ -1,9 +1,9 @@
-import * as THREE from './three.js-master/build/three.js';
+import * as THREE from './node_modules/three/build/three.module.js';
 
 
 let scene, camera, renderer;
         
-
+init();
 function init(){
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight, 1 ,1000);
@@ -22,4 +22,3 @@ function animate() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
 }
-init();
