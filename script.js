@@ -1,6 +1,4 @@
-import { Mesh } from './node_modules/three/build/three.module.js';
 import * as THREE from './node_modules/three/build/three.module.js';
-
 
 let scene, camera, renderer, box, boxForm;
         
@@ -23,6 +21,7 @@ function init(){
 
     //Create a box
     box = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 0.5), new THREE.MeshNormalMaterial({ vertexColors: THREE.FaceColors }));
+    box.position.set(2,2,2);
     scene.add(box);
 
     //Create a renderer
@@ -39,4 +38,3 @@ function animate() {
     box.rotation.x += 0.01;
     renderer.render(scene, camera);
 }
-
