@@ -1,7 +1,6 @@
 import * as THREE from './node_modules/three/build/three.module.js';
 
-let scene, camera, renderer, box, boxForm;
-        
+let scene, camera, renderer, box, boxForm;        
 init();
 function init(){
     // Create a scene
@@ -28,7 +27,7 @@ function init(){
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
-
+  
     //Run the renderer in a loop
     renderer.setAnimationLoop(animate);
 }
